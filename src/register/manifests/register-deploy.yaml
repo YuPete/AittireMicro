@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: register
+  labels:
+    app: register
+spec: #Deployment level spec that defines number of pods, strategy and pod level spec
+  replicas: 2
+  selector:
+    matchLabels:
+      app: register
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+  template:
+    metadata:
+      labels:
+        app: register
+    spec: #Pod level spec; Configuration of individual pods like containers and volume
+      containers:
+        - name: register
+          image: yupete/register
+          ports:
+            - containerPort: 6000
+          envFrom:
+            - configMapRef:
+                name: register-configmap
+            - secretRef:
+                name: register-secret

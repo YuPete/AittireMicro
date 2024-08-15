@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aittire Login Page</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class = "navbar__logoButton">
+            <img class="navbar__logo" src="/static/logo_smooth_tie.svg" alt="Aittire Logo" />
+            <span class="navbar__text">Aittire</span>
+        </a>
+        <ul class="navbar__navigation">
+          <li class="navbar__navigation-item">
+            <a href="#" class="navbar__link">About Us</a>
+          </li>
+        </ul>
+      </header>
+   
+    <div class="wrapper">
+        <form method="POST" class="login-form">              
+                <h1>Login</h1>
+
+                {% for message in get_flashed_messages() %}
+                    <div class="alert">
+                    <p>{{ message }}</p>
+                    </div>
+                {% endfor %}
+                    <div class="input-box">
+                <input type="text" name="email" placeholder=" Email" required>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+                <a href="/forget">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="register-link">
+                <p>Don't have an account? <a href="/register">Create an account</a></p>
+            </div>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="footer__content">
+            <section class="left">
+                <a class="footer__item"> Project Aittire New York 2024 </a>
+                <a href="#" class="footer__item">Report a bug</a>
+            </section>
+            <section class ="right">
+                <a class = "footer__item">Peter Yu, William Yang, Lucas Hobart</a>
+                
+            </section>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Aittire Login Page</title>
+    <link rel="stylesheet" href="/static/css/landing.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class = "navbar__logoButton">
+            <img class="navbar__logo" src="/static/logo_smooth_tie.svg" alt="Aittire Logo" />
+            <span class="navbar__text">Aittire</span>
+        </a>
+        <ul class="navbar__navigation">
+            {% if email %}
+            
+            <li class="navbar__navigation-item">
+                <div class = "navbar__link"> Hi, {{email}}</div>
+            </li>
+            <li class="navbar__navigation-item">
+                <a href="#" class="navbar__link">About Us</a>
+              </li>
+            <li class="navbar__navigation-item">
+                <a href="/clear" class="navbar__link">Logout</a>
+              </li>
+
+
+            {% else %}
+            <li class="navbar__navigation-item">
+              <a href="/login" class="navbar__link">Login/Join</a>
+            </li>
+
+            <li class="navbar__navigation-item">
+                <a href="#" class="navbar__link">About Us</a>
+              </li>
+            {% endif %}
+          </ul>
+      </header>
+      <h1 class = "text-above-slideshow">
+        Elevate Your Style with a Personal Designer  
+     </h1>
+      <div class="slider-frame">
+        <div class="slide-images">
+            <div class="img-container">
+                <img src="/static/image/WalkingBYPierLala.PNG">
+            </div>
+            <div class="img-container">
+                <img src="/static/image/galaxy.PNG">
+            </div>
+            <div class="img-container">
+                <img src="/static/image/yaleBerk.PNG">
+            </div>
+            <div class="img-container">
+                <img src="/static/image/OpeningLala.PNG">
+            </div>
+        </div>
+    </div>
+   
+   
+    <footer class="footer">
+        <div class="footer__content">
+            <section class="left">
+                <a class="footer__item"> Project Aittire New York 2024 </a>
+                <a href="#" class="footer__item">Report a bug</a>
+            </section>
+            <section class ="right">
+                <a class = "footer__item">Peter Yu, William Yang, Lucas Hobart</a>
+                
+            </section>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
